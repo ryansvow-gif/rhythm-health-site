@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "human nature health",
+  description = "natural health guidance for mind, body, and spirit.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={Astro.url.href} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">skip to content</a>
+    <div class="site-shell">
+      <div class="status-bar-wrap">
+        <div class="container">
+          <div class="status-bar">
+            <span>last updated: april 2026</span>
+            <span>focus: sleep • light • food • movement • calm</span>
+            <span>status: building a healthier life</span>
+          </div>
+        </div>
+      </div>
+
+      <header class="site-header">
+        <div class="container header-inner">
+          <a href="/" class="brand">
+            <span class="brand-mark">◌</span>
+            <div class="brand-copy">
+              <span class="brand-kicker">human nature</span>
+              <span class="brand-title">health</span>
+            </div>
+          </a>
+
+          <nav class="nav">
+            <a href="/" class={Astro.url.pathname === '/' ? 'active' : ''} aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>home</a>
+            <a href="/start-here" class={Astro.url.pathname === '/start-here' ? 'active' : ''} aria-current={Astro.url.pathname === '/start-here' ? 'page' : undefined}>start here</a>
+            <a href="/sleep" class={Astro.url.pathname === '/sleep' ? 'active' : ''} aria-current={Astro.url.pathname === '/sleep' ? 'page' : undefined}>sleep</a>
+            <a href="/sunlight" class={Astro.url.pathname === '/sunlight' ? 'active' : ''} aria-current={Astro.url.pathname === '/sunlight' ? 'page' : undefined}>sunlight</a>
+            <a href="/movement" class={Astro.url.pathname === '/movement' ? 'active' : ''} aria-current={Astro.url.pathname === '/movement' ? 'page' : undefined}>movement</a>
+            <a href="/nervous-system" class={Astro.url.pathname === '/nervous-system' ? 'active' : ''} aria-current={Astro.url.pathname === '/nervous-system' ? 'page' : undefined}>nervous system</a>
+            <a href="/food" class={Astro.url.pathname === '/food' ? 'active' : ''} aria-current={Astro.url.pathname === '/food' ? 'page' : undefined}>food</a>
+            <a href="/mental-clarity" class={Astro.url.pathname === '/mental-clarity' ? 'active' : ''} aria-current={Astro.url.pathname === '/mental-clarity' ? 'page' : undefined}>clarity</a>
+            <a href="/about" class={Astro.url.pathname === '/about' ? 'active' : ''} aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>about</a>
+            <a href="/recommendations" class={Astro.url.pathname.startsWith('/recommendations') ? 'active' : ''} aria-current={Astro.url.pathname.startsWith('/recommendations') ? 'page' : undefined}>tools</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main">
+        <div class="container">
+          <slot />
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div class="footer-grid">
+            <div>
+              <p class="footer-heading">human nature health</p>
+              <p class="footer-copy">
+                natural health guidance for mind, body, and spirit.
+              </p>
+            </div>
+
+            <div>
+              <p class="footer-heading">core topics</p>
+              <div class="footer-links">
+                <a href="/sleep">sleep</a>
+                <a href="/sunlight">sunlight</a>
+                <a href="/movement">movement</a>
+                <a href="/nervous-system">nervous system</a>
+                <a href="/food">food</a>
+                <a href="/mental-clarity">clarity</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="footer-heading">guides</p>
+              <div class="footer-links">
+                <a href="/best-morning-routine">morning routine</a>
+                <a href="/best-sleep-routine">sleep routine</a>
+                <a href="/how-to-fix-sleep">fix sleep</a>
+                <a href="/why-you-feel-tired-all-the-time">low energy</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="footer-note">
+            built around how humans are meant to live, move, think, eat, rest, and reconnect.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
