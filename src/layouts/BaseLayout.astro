@@ -180,6 +180,26 @@ const {
     flex-direction: column;
     gap: 24px;
   }
+
+  /* HARD OVERFLOW CONTAINMENT FIX */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .site-shell {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .site-header, .header-inner {
+    max-width: 100%;
+  }
+
+  .nav {
+    flex-wrap: wrap !important;
+    max-width: 100%;
+  }
 }
 </style>
   </body>
