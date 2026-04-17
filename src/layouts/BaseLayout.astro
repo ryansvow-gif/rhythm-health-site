@@ -109,5 +109,61 @@ const {
         </div>
       </footer>
     </div>
+</style>
+<style>
+/* MOBILE RESPONSIVENESS FIX */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .site-header a {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-panel-large {
+    padding: 20px !important;
+  }
+
+  .three-panel-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .info-card {
+    width: 100% !important;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+</style>
   </body>
 </html>
