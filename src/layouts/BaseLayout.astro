@@ -113,8 +113,10 @@ const {
 /* MOBILE RESPONSIVENESS FIX (ENHANCED) */
 @media (max-width: 768px) {
   .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   /* HEADER FIX */
@@ -209,6 +211,13 @@ const {
     border-radius: 20px;
     padding: 16px;
     box-sizing: border-box;
+  }
+
+  /* FULL-WIDTH CONTENT CARD FLOW FIX */
+  .content-block {
+    border-radius: 22px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .accent-section .content-block {
